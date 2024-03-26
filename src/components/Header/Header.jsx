@@ -1,5 +1,4 @@
-"use client";
-
+import Link from "next/link";
 import DarkIcon from "./DarkIcon";
 
 import MenuItem from "./MenuItem";
@@ -13,10 +12,11 @@ export default function Header() {
       </div>
       <div className="flex justify-between items-center text-lg">
         <DarkIcon />
-
-        <span className="mr-4 border rounded-lg font-bold bg-orange-400 p-2">
-          Movie<span className="text-gray-700">Max</span>
-        </span>
+        <Link href="/">
+          <span className="mr-4 border rounded-lg font-bold bg-amber-500 p-2">
+            Movie<span className="text-gray-700">Max</span>
+          </span>
+        </Link>
       </div>
     </header>
   );
