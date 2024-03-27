@@ -15,12 +15,12 @@ export default function DarkModeSwitch() {
         (currentTheme === "dark" ? (
           <i
             onClick={() => setTheme("light")}
-            className="text-xl cursor-pointer hover:text-amber-500 mr-4 bi bi-moon-fill"
+            className="text-xl cursor-pointer hover:text-amber-500 mr-4 bi bi-brightness-high "
           />
         ) : (
           <i
             onClick={() => setTheme("dark")}
-            className=" bi bi-brightness-high mr-4 text-xl cursor-pointer hover:text-amber-500"
+            className=" bi bi-moon-fill  mr-4 text-xl cursor-pointer hover:text-amber-500"
           />
         ))}
     </div>
