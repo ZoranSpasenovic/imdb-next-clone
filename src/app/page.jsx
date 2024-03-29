@@ -1,5 +1,6 @@
 const API_KEY = process.env.API_KEY;
 
+import MovieList from "@/components/Movies/MovieList";
 import React from "react";
 
 export default async function HomePage({ searchParams }) {
@@ -13,9 +14,6 @@ export default async function HomePage({ searchParams }) {
     throw new Error("Something went wrong!");
   }
   const results = resData.results;
-  results.forEach((item) => {
-    console.log(item.original_title);
-  });
 
-  return <div className="font-bold text-7xl">HomePage</div>;
+  return <MovieList results={results} />;
 }
