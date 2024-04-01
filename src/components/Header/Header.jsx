@@ -14,6 +14,7 @@ export default function Header() {
       <div className="flex justify-between items-center text-lg">
         <Search />
         <DarkIcon />
+
         <Link href="/">
           <span className="mr-4 border rounded-lg font-bold bg-amber-500 p-2">
             Movie<span className="text-gray-700">Max</span>
