@@ -4,6 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Header from "@/components/Header/Header";
 import Providers from "./Providers";
 import NavBar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
           <Header />
           <NavBar />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>
