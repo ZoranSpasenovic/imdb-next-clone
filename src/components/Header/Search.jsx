@@ -13,6 +13,10 @@ export default function Search() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (searchTerm.trim().length === 0) {
+      setSearchTerm("");
+      return;
+    }
     router.push(`/search?keyword=${searchTerm}`);
     setSearchTerm("");
   };

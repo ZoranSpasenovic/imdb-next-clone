@@ -6,17 +6,26 @@ export default function PageChange() {
   const searchParams = useSearchParams();
 
   const page = searchParams.get("page") ?? 1;
+  const pageNumber = parseInt(page);
   const genre = searchParams.get("genre") ?? "now_playing";
+  const genreId = searchParams.get("genre_id");
 
   const handleNextPage = () => {
-    router.push(`/?genre=${genre}&page=${page + 1}`);
+    if (genreId) {
+      router.push(`/?genre_id=${genreId}&page=${pageNumber + 1}`);
+      return
+    }
+    router.push(`/?genre=${genre}&page=${pageNumber + 1}`);
   };
   const hanglePreviousPage = () => {
-    if (page === 1) {
+    if (pageNumber === 1) {
       return;
     }
-
-    router.push(`/?genre=${genre}&page=${page - 1}`);
+    if (genreId) {
+      router.push(`/?genre_id=${genreId}&page=${pageNumber - 1}`);
+      return
+    }
+    router.push(`/?genre=${genre}&page=${pageNumber - 1}`);
   };
 
   return (
@@ -25,7 +34,7 @@ export default function PageChange() {
         onClick={hanglePreviousPage}
         className="bi bi-caret-left-fill hover:text-blue-500"
       ></i>
-      <span>{page}</span>
+      <span>{pageNumber}</span>
       <i
         onClick={handleNextPage}
         className="bi bi-caret-right-fill hover:text-blue-500"

@@ -6,7 +6,7 @@ import MenuItem from "./MenuItem";
 
 export default function Header() {
   return (
-    <header className="flex relative h-16 px-3 items-center justify-between dark:bg-gray-800 sm:px-20 mx-auto ">
+    <header className="flex h-16 px-3 items-center justify-between dark:bg-gray-800 sm:px-20 mx-auto ">
       <div className="flex justify-between text-lg">
         <MenuItem adress="/" title="HOME" icon="bi bi-house-door-fill" />
         <MenuItem adress="/about" title="ABOUT" icon="bi bi-info-circle-fill" />
