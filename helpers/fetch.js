@@ -32,3 +32,12 @@ export const fetchSearchMovies = async (keyword) => {
   const { results } = resData;
   return results;
 };
+
+export const fetchGenres = async () => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en`
+  );
+  const resData = await response.json();
+  const { genres } = resData;
+  return genres
+};
